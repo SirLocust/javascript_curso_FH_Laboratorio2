@@ -39,4 +39,12 @@ export class TodoList {
     delete(Pos){
         this.todos.splice(Pos,1);
     }
+
+    saveLocalStorage(){
+
+    }
+
+    loadLocalStorage(){
+        
+    }
 }
