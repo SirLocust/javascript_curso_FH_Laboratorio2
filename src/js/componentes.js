@@ -1,5 +1,5 @@
 import { todoList } from '../app';
-import {Todo, TodoList} from '../classes/index-clases'
+import {Todo} from '../classes/index-clases'
 
 const divTodoList = document.querySelector('.todo-list')
 const inputNewTodo = document.querySelector('.new-todo')
@@ -49,6 +49,7 @@ divTodoList.addEventListener('click', (event) => {
         
     }
     if(nameElement === "BUTTON"){
+        console.log("enro");
         todoList.deleteTodo(todoElementId)
         // console.log(todoElement)
         todoElement.remove()

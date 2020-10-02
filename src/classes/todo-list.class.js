@@ -2,11 +2,12 @@
 export class TodoList {
     
     constructor() {
-        this.todos = [];
+        this.loadLocalStorage();
     }
 
     newTodo(todo){
         this.todos.push(todo)
+        this.saveLocalStorage()
     }
 
     deleteTodo(id){
@@ -15,6 +16,7 @@ export class TodoList {
                 this.delete(todoPos)
             }
         }
+        this.saveLocalStorage();
     }
 
     touchCompleted(id){
@@ -24,6 +26,7 @@ export class TodoList {
                 break;
             }
         }
+        this.saveLocalStorage();
     }
 
     delletAllCompleted(){
@@ -33,6 +36,7 @@ export class TodoList {
                 this.delete(todoPos)
                 todoPos--;
             }
+            this.saveLocalStorage();
         }
     }
 
@@ -41,10 +45,11 @@ export class TodoList {
     }
 
     saveLocalStorage(){
-
+        localStorage.setItem('todo', JSON.stringify(this.todos) )
     }
 
     loadLocalStorage(){
-        
+        const local = localStorage.getItem('todo');
+        this.todos = (local)?JSON.parse(local):[];
     }
 }
