@@ -1,11 +1,16 @@
+import { todoList } from '../app';
+import {Todo, TodoList} from '../classes/index-clases'
+
 const divTodoList = document.querySelector('.todo-list')
 const inputNewTodo = document.querySelector('.new-todo')
 
 
 inputNewTodo.addEventListener('keydown', (e ) =>{
     if(e.key === 'Enter'){
-
-        console.log(inputNewTodo.value)
+        const newTodo = new Todo(inputNewTodo.value);
+        todoList.newTodo( newTodo );
+        createTodoHtml(newTodo);
+        inputNewTodo.value = '';
     }
 })
 
