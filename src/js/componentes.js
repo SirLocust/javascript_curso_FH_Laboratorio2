@@ -15,7 +15,7 @@ inputNewTodo.addEventListener('keydown', (e ) =>{
 })
 
 
-export const createTodoHtml = (todo )=>{
+export const createTodoHtml = (todo)=>{
     const htmlTodo = `
     <li class="${ (todo.completed)?'completed': '' }" data-id="${todo.id}">
 						<div class="view">
