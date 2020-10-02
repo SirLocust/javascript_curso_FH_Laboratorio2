@@ -39,9 +39,20 @@ divTodoList.addEventListener('click', (event) => {
     
     const nameElement = event.target.nodeName;
     const todoElement = event.target.parentElement.parentElement
+    const todoElementId =todoElement.dataset.id
+    console.log(nameElement)
     if(nameElement === 'INPUT'){
         
-        todoList.touchCompleted(todoElement.dataset.id)
-        console.log(todoList)
+        todoList.touchCompleted(todoElementId)
+        
+        todoElement.classList.toggle('completed');
+        
     }
+    if(nameElement === "BUTTON"){
+        todoList.deleteTodo(todoElementId)
+        // console.log(todoElement)
+        todoElement.remove()
+    }
+
+    console.log(todoList)
 })

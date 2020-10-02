@@ -10,7 +10,11 @@ export class TodoList {
     }
 
     deleteTodo(id){
-
+        for(let i in this.todos){
+            if(this.todos[i].id === parseInt(id)){
+                this.todos.splice(i,1);
+            }
+        }
     }
 
     touchCompleted(id){
