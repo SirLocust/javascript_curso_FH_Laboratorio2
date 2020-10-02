@@ -1,7 +1,7 @@
 import './style.css'
 import { Todo, TodoList } from './classes/index-clases'
 import { createTodoHtml} from './js/componentes'
-console.clear();
+// console.clear();
 export const todoList = new TodoList();
 
 const task = new Todo("aprender Java Script");
@@ -9,5 +9,4 @@ const task = new Todo("aprender Java Script");
 todoList.newTodo(task)
 console.log(todoList)
 
-createTodoHtml(task);
 createTodoHtml(task);

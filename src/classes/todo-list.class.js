@@ -14,7 +14,12 @@ export class TodoList {
     }
 
     touchCompleted(id){
-
+        for(let todo of this.todos){
+            if(todo.id === parseInt(id)){
+                todo.completed = !todo.completed;
+                break;
+            }
+        }
     }
 
     delletAllCompleted(){
