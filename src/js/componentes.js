@@ -32,7 +32,7 @@ export const createTodoHtml = (todo )=>{
 
     divTodoList.append(div.firstElementChild);
 
-
+    return div.firstElementChild;
 }
 
 divTodoList.addEventListener('click', (event) => {
