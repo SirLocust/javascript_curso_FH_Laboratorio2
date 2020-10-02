@@ -3,7 +3,7 @@ import {Todo, TodoList} from '../classes/index-clases'
 
 const divTodoList = document.querySelector('.todo-list')
 const inputNewTodo = document.querySelector('.new-todo')
-const toggleAll = document.querySelectorAll('.toggle')
+const buttonClearALLCompleted = document.querySelector('.clear-completed')
 
 inputNewTodo.addEventListener('keydown', (e ) =>{
     if(e.key === 'Enter'){
@@ -53,6 +53,20 @@ divTodoList.addEventListener('click', (event) => {
         // console.log(todoElement)
         todoElement.remove()
     }
+    
+})
 
-    console.log(todoList)
+
+buttonClearALLCompleted.addEventListener('click', (event) =>{
+    const divTodoAll = divTodoList.children
+    todoList.delletAllCompleted();
+    for(let i=0 ; i<divTodoAll.length ; i++){
+        
+        if(divTodoAll[i].attributes.getNamedItem('class').value === "completed"){
+            divTodoAll[i].remove();
+            i--;
+        }
+    }
+    console.log(todoList);
+    // console.log(divTodoList.children[0].attributes.getNamedItem('class').value);
 })

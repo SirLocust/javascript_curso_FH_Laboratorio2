@@ -10,9 +10,9 @@ export class TodoList {
     }
 
     deleteTodo(id){
-        for(let i in this.todos){
-            if(this.todos[i].id === parseInt(id)){
-                this.todos.splice(i,1);
+        for(let todoPos in this.todos){
+            if(this.todos[todoPos].id === parseInt(id)){
+                this.delete(todoPos)
             }
         }
     }
@@ -27,6 +27,16 @@ export class TodoList {
     }
 
     delletAllCompleted(){
-        
+        for(let todoPos = 0; todoPos<this.todos.length ; todoPos++){
+            if(this.todos[todoPos].completed === true){
+                
+                this.delete(todoPos)
+                todoPos--;
+            }
+        }
+    }
+
+    delete(Pos){
+        this.todos.splice(Pos,1);
     }
 }
