@@ -43,6 +43,22 @@ export class TodoList {
         }
     }
 
+    showPending(){
+       return this.stateTodos(false)
+    }
+    showCompleted(){
+        return this.stateTodos(true)
+    }
+    stateTodos(state){
+        let pendingTodos = [];
+        for(let todo of this.todos){
+            if(todo.completed === state){
+                pendingTodos.push(todo);
+            }
+        }
+        return pendingTodos;
+    }
+
     delete(Pos){
         this.todos.splice(Pos,1);
     }
